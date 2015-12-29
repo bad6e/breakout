@@ -665,8 +665,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Users/mcschatz/Documents/turing/module_4/projects/breakout/node_modules/mocha-loader/node_modules/css-loader/index.js!/Users/mcschatz/Documents/turing/module_4/projects/breakout/node_modules/mocha/mocha.css", function() {
-			var newContent = require("!!/Users/mcschatz/Documents/turing/module_4/projects/breakout/node_modules/mocha-loader/node_modules/css-loader/index.js!/Users/mcschatz/Documents/turing/module_4/projects/breakout/node_modules/mocha/mocha.css");
+		module.hot.accept("!!/Users/bad6e/turing/module-4/projects/breakout/node_modules/mocha-loader/node_modules/css-loader/index.js!/Users/bad6e/turing/module-4/projects/breakout/node_modules/mocha/mocha.css", function() {
+			var newContent = require("!!/Users/bad6e/turing/module-4/projects/breakout/node_modules/mocha-loader/node_modules/css-loader/index.js!/Users/bad6e/turing/module-4/projects/breakout/node_modules/mocha/mocha.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
