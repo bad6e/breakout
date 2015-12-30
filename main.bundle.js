@@ -95,7 +95,13 @@
 	  this.score = 0;
 	  this.lives = 3;
 	  this.status = true;
-	  this.tick(canvas);
+	  Styles.displayStyles('click-start', 'inline');
+	  Styles.countDownText("#delay-title", '3 2 1', 0, 600);
+
+	  setTimeout((function () {
+	    this.tick(canvas);
+	    Styles.displayStyles('click-start', 'none');
+	  }).bind(this), 4500);
 	};
 
 	var createBall = function createBall(game, paddle, bricks) {
@@ -193,7 +199,7 @@
 	    Sounds.win();
 	    Styles.showText("#won-title", "Congratulations You Won!", 0, 150);
 	    Styles.showText("#final-score", "Final Score: " + this.score, 0, 150);
-	    Styles.getId('restart').onclick = function () {
+	    Styles.getId('restart-win').onclick = function () {
 	      document.location.reload();
 	    };
 	  },
@@ -648,6 +654,24 @@
 	      var self = this;
 	      setTimeout(function () {
 	        self.showText(target, message, index, interval);
+	      }, interval);
+	    }
+	  },
+
+	  countDownText: function countDownText(target, message, index, interval) {
+	    if (index < message.length) {
+	      $(target).append(message[index++]);
+	      setTimeout(function () {
+	        $(target).empty();
+	        if (index == message.length) {
+	          setTimeout(function () {
+	            $(target).append("GO!!");
+	          }, interval);
+	        }
+	      }, interval);
+	      var self = this;
+	      setTimeout(function () {
+	        self.countDownText(target, message, index, interval);
 	      }, interval);
 	    }
 	  }
