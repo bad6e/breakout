@@ -74,7 +74,7 @@ describe('game', function () {
     let game = new Game();
     game.status = false;
     game.move();
-    assert.equal(game.bodies[0].x, 401);
+    assert.equal(game.bodies[0].x, 391);
   });
 
   it('should have draw method', function () {
